@@ -4,44 +4,28 @@
 using namespace std;
 
 string code;
-int wordToNum(int index){
+int wordToNum(int index) {
+    if(index + 3 <= code.length()) {
+        string sub = code.substr(index, 3);
+        if(sub == "one") return 1;
+        if(sub == "two") return 2;
+        if(sub == "six") return 6;
+    }
     
-    if(index + 3 <= code.length() && code.substr(index, index + 3) == "one"){
-        return 1; 
+    if(index + 4 <= code.length()) {
+        string sub = code.substr(index, 4);
+        if(sub == "four") return 4;
+        if(sub == "five") return 5;
+        if(sub == "nine") return 9;
     }
-
-    if(index + 3 <= code.length() && code.substr(index, index + 3) == "two"){
-        return 2; 
+    
+    if(index + 5 <= code.length()) {
+        string sub = code.substr(index, 5);
+        if(sub == "three") return 3;
+        if(sub == "seven") return 7;
+        if(sub == "eight") return 8;
     }
-
-    if(index + 5 <= code.length() && code.substr(index, index + 5) == "three"){
-        return 3; 
-    }
-
-    if(index + 4 <= code.length() && code.substr(index, index + 4) == "four"){
-        return 4; 
-    }
-
-    if(index + 4 <= code.length() && code.substr(index, index + 4) == "five"){
-        return 5; 
-    }
-
-    if(index + 3 <= code.length() && code.substr(index, index + 3) == "six"){
-        return 6; 
-    }
-
-    if(index + 5 <= code.length() && code.substr(index, index + 5) == "seven"){
-        return 7; 
-    }
-
-    if(index + 5 <= code.length() && code.substr(index, index + 5) == "eight"){
-        return 8; 
-    }
-
-    if(index + 4 <= code.length() && code.substr(index, index + 4) == "nine"){
-        return 9; 
-    }
-
+    
     return -1;
 }
 
