@@ -20,6 +20,6 @@ int main(){
     for(int i = 0; i < v1.size();i++){
         sum+= abs(v1[i]-v2[i]);
     }
-    
+
     cout<< sum;
 }
